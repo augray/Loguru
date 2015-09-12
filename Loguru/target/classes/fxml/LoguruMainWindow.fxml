@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import loguru.ui.LogTab?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="loguru.ui.LoguruMainWindowController" minWidth="600" minHeight="400">
+	<top>
+		<BorderPane>
+			<left>
+				<Label text="Find:" />
+			</left>
+			<center>
+				<TextField fx:id="findText" />
+			</center>
+			<right>
+				<HBox><children>
+				<Button fx:id="findPrev" text="Prev"/>
+				<Button fx:id="findNext" text="Next"/>
+				</children></HBox>
+			</right>
+		</BorderPane>
+	</top>
+	<center>
+		<TabPane fx:id="logTabs">
+			<tabs>
+				<LogTab />
+				<Tab fx:id="newTabTab" text="+" closable="false" />
+			</tabs>
+		</TabPane>
+	</center>
+</BorderPane>

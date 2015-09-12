@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+
+<fx:root type="javafx.scene.control.Tab" text="No file" xmlns:fx="http://javafx.com/fxml">
+    <BorderPane>
+    	<center>
+	    	<TextArea fx:id="logContents" text="No file selected" />
+    	</center>
+    	<bottom>
+    		<BorderPane minHeight="15">
+    			<left><Label text="Log file" /> </left>
+    			<center><TextField fx:id="selectedFileText" editable="false" /></center>
+    			<right><Button text="Browse" fx:id="browseButton" /></right>
+    		</BorderPane>
+    	</bottom>
+    </BorderPane>
+</fx:root>
