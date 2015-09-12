@@ -1,0 +1,8 @@
+#Ignore editor temp files
+*~
+*.swp
+
+#Don't include built files
+Loguru/target/**/*
+*.class
+*.jar
