@@ -6,11 +6,10 @@ import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
-import javafx.scene.control.TextField;
 import loguru.ui.customControls.FindBar;
+import loguru.ui.LogTab;
 
 public class LoguruMainWindowController implements Initializable{
 

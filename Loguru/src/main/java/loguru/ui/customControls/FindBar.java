@@ -6,12 +6,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
-
-import com.sun.istack.internal.logging.Logger;
+import java.util.logging.Logger;
 
 import javafx.application.Platform;
-import javafx.event.Event;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -21,7 +18,7 @@ import javafx.scene.layout.BorderPane;
 
 public class FindBar extends BorderPane implements Initializable {
 
-	private static final Logger logger = Logger.getLogger(FindBar.class);
+	private static final Logger logger = Logger.getLogger(FindBar.class.getCanonicalName());
 	
 	@FXML TextField findText;
 	@FXML Button findPrev;
