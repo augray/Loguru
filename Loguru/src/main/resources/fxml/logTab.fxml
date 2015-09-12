@@ -14,9 +14,24 @@
     	</center>
     	<bottom>
     		<BorderPane minHeight="15">
-    			<left><Label text="Log file" /> </left>
-    			<center><TextField fx:id="selectedFileText" editable="false" /></center>
-    			<right><Button text="Browse" fx:id="browseButton" /></right>
+    			<left>
+    				<Label text="Log file" >
+    					<padding><Insets top="5" right="5" bottom="2" left="5"/></padding>
+    				</Label>
+    			</left>
+    			<center>
+    				<TextField fx:id="selectedFileText" editable="false" >
+    					<padding><Insets top="2" right="5" bottom="2" left="5"/></padding>
+    				</TextField>
+    			</center>
+    			<right>
+    				<HBox>
+    					<padding><Insets top="2" right="5" bottom="2" left="5"/></padding>
+    					<children>
+    						<Button text="Browse" fx:id="browseButton" />
+    					</children>
+    				</HBox>
+    			</right>
     		</BorderPane>
     	</bottom>
     </BorderPane>

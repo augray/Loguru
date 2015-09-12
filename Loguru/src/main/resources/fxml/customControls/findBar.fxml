@@ -8,15 +8,22 @@
 
 <fx:root type="javafx.scene.layout.BorderPane" xmlns:fx="http://javafx.com/fxml">
 		<left>
-			<Label text="Find:" />
+			<Label text="Find:" >
+				<padding><Insets top="5" right="5" bottom="2" left="5"/></padding>
+			</Label>
 		</left>
 		<center>
-			<TextField fx:id="findText" />
+			<TextField fx:id="findText" >
+				<padding><Insets top="2" right="5" bottom="2" left="5"/></padding>
+			</TextField>
 		</center>
 		<right>
-			<HBox><children>
-			<Button fx:id="findPrev" text="Prev"/>
-			<Button fx:id="findNext" text="Next"/>
-			</children></HBox>
+			<HBox>
+				<padding><Insets top="2" right="5" bottom="2" left="5"/></padding>
+				<children>
+					<Button fx:id="findPrev" text="Prev"/>
+					<Button fx:id="findNext" text="Next"/>
+				</children>
+			</HBox>
 		</right>	
 </fx:root>

@@ -17,6 +17,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.stage.Window;
+import loguru.util.StyleSheets;
 
 public class LoguruMainWindow extends Application{
 
@@ -71,6 +72,8 @@ public class LoguruMainWindow extends Application{
 			Parent root = FXMLLoader.load(getClass().getResource(FXML));
 			
 			Scene scene = new Scene(root);
+			scene.getStylesheets().add(StyleSheets.BASE_STYLE);
+			
 			stage.setMinWidth(((BorderPane)root).getMinWidth());
 			stage.setMinHeight(((BorderPane)root).getMinHeight());
 			

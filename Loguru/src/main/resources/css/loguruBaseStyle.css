@@ -1,0 +1,16 @@
+/* Color scheme based on: http://paletton.com/#uid=12P0u0k3Hua2AWe2OGL3Ppc2Vky*/
+
+.root{
+    -fx-font-size: 10pt;
+    -fx-font-family: "Courier New";
+    -fx-base: rgb(203, 223, 203);
+    -fx-background: rgb(170, 192, 170);
+}
+
+.text-area .content {  
+   -fx-background-color: rgb(227, 247, 227);  
+} 
+
+.text-input {
+  -fx-background-color: rgb(227, 247, 227);
+}
