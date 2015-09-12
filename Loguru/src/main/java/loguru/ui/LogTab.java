@@ -1,11 +1,9 @@
 package loguru.ui;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.Scanner;
 import java.util.concurrent.Callable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -13,6 +11,7 @@ import java.util.logging.Logger;
 import javafx.application.Platform;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -20,14 +19,11 @@ import javafx.scene.control.Tab;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
-import javafx.stage.Window;
-import javafx.fxml.FXML;
 import loguru.api.Filter;
 import loguru.api.FilterApplicator;
 import loguru.api.PassAllFilter;
 import loguru.services.WorkPool;
 import loguru.util.LoguruAlert;
-import loguru.util.MathUtil;
 import loguru.util.ThreadUtil.Stopable;
 
 public class LogTab extends Tab implements Initializable{
@@ -44,6 +40,18 @@ public class LogTab extends Tab implements Initializable{
 	 * Guarded by its intrinsic lock.
 	 */
 	ObjectProperty<File> selectedLog = new SimpleObjectProperty<>(); 
+	
+	public LogTab() {
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(FXML));
+		fxmlLoader.setRoot(this);
+		fxmlLoader.setController(this);
+
+		try {
+			fxmlLoader.load();
+		} catch (IOException exception) {
+			throw new RuntimeException(exception);
+		}
+	}
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -171,18 +179,6 @@ public class LogTab extends Tab implements Initializable{
 	private void selectLogFile(File file){
 		synchronized (file) {			
 			selectedLog.set(file);
-		}
-	}
-
-	public LogTab() {
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(FXML));
-		fxmlLoader.setRoot(this);
-		fxmlLoader.setController(this);
-
-		try {
-			fxmlLoader.load();
-		} catch (IOException exception) {
-			throw new RuntimeException(exception);
 		}
 	}
 

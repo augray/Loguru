@@ -6,23 +6,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 <?import loguru.ui.LogTab?>
+<?import loguru.ui.customControls.*?>
 
 <BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="loguru.ui.LoguruMainWindowController" minWidth="600" minHeight="400">
 	<top>
-		<BorderPane>
-			<left>
-				<Label text="Find:" />
-			</left>
-			<center>
-				<TextField fx:id="findText" />
-			</center>
-			<right>
-				<HBox><children>
-				<Button fx:id="findPrev" text="Prev"/>
-				<Button fx:id="findNext" text="Next"/>
-				</children></HBox>
-			</right>
-		</BorderPane>
+		<FindBar fx:id="findBar" />
 	</top>
 	<center>
 		<TabPane fx:id="logTabs">

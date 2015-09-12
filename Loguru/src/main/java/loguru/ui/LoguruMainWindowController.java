@@ -10,14 +10,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
+import loguru.ui.customControls.FindBar;
 
 public class LoguruMainWindowController implements Initializable{
 
 	@FXML TabPane logTabs;
 	@FXML Tab newTabTab;
-	@FXML TextField findText;
-	@FXML Button findPrev;
-	@FXML Button findNext;
+	@FXML FindBar findBar;
 	
 	private void handleNewTab(){
 		if(newTabTab.isSelected()){
@@ -35,21 +34,21 @@ public class LoguruMainWindowController implements Initializable{
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		newTabTab.setOnSelectionChanged((e)->handleNewTab());
-		findNext.setOnAction((e)->doFindNext());
-		findPrev.setOnAction((e)->doFindPrev());
+		
+		findBar.addOnFindHandler((text,forward)->{
+			LogTab selectedTab = getSelectedLogTab();
+			if(selectedTab!=null){
+				if(forward){
+					selectedTab.findNext(text);
+				} else {
+					selectedTab.findPrev(text);
+				}
+			}
+		});
 	}
 
 	private LogTab getSelectedLogTab(){
 		return (LogTab)this.logTabs.getSelectionModel().getSelectedItem();
 	}
-	
-	private void doFindPrev() {
-		LogTab selectedTab = getSelectedLogTab();
-		selectedTab.findPrev(findText.getText());
-	}
 
-	private void doFindNext() {
-		LogTab selectedTab = getSelectedLogTab();
-		selectedTab.findNext(findText.getText());
-	}
 }
